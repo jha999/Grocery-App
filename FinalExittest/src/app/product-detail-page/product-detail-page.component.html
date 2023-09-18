@@ -1,0 +1,38 @@
+<div class="product" style="background-color: rgb(253, 253, 246);">
+  <div class="images" *ngFor="let data of recievedcollectiondata">
+    <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="{{ data.image }}">
+      <img class="rounded-4 fit image"
+        src="{{ data.image}}" />
+    </a>
+  </div>
+  <div class="details">
+    <div *ngFor="let data of recievedcollectiondata" class="for-loop">
+      <p><strong>{{data.product_Name}}</strong></p>
+      <h6>{{data.available_Price}} $</h6>
+      <p>{{data.available_Discount}} % </p>
+    </div>
+    <div class="input-group plus-minus-box" style="width: 150px ">
+      <button class="btn btn-white border border-secondary px-3 ite" type="button" id="button-addon1"
+      (click)="decrementQuantity()" data-mdb-ripple-color="dark">
+        <span>-</span>
+      </button>
+      <input type="text" class="form-control text-center border border-secondary ite" [value]="quantity"
+        aria-label="Example text with button addon" aria-describedby="button-addon1" />
+      <button class="btn btn-white border border-secondary px-3 ite" type="button" id="button-addon2"
+      (click)="incrementQuantity()" data-mdb-ripple-color="dark">
+        <span>+</span>
+      </button>
+      <!-- <button >Send Data</button> -->
+    </div>
+    <div *ngFor="let data of recievedcollectiondata">
+      <div *ngIf="isLoggedin; else elseBlock">
+        <fa-icon [icon]="icon" (click)="sendData()" routerLink="/"></fa-icon>
+      </div>
+    </div>
+    <ng-template #elseBlock>
+      <p class="text-danger">Add to Cart Service !For logged in User</p>
+    </ng-template>
+  </div>
+</div>
+
+<!-- routerLink="/addcart/{{data.id}}" -->

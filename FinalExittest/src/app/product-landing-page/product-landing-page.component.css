@@ -1,0 +1,46 @@
+.image { 
+    width: 100px; 
+    height: 100px;  
+}
+.btn{
+  margin-right: 30px;
+  font-weight: bold;
+}
+.searchbox {
+  position: relative;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px;
+}
+
+.refresh {
+  border-radius: 8px;
+}
+form {
+  width: 20%;
+  margin-left: 560px;
+  margin-top: -53px
+}
+
+.form-group,
+.form-control {
+  width: 100%;
+  margin-left: 6px;
+
+}
+
+p {
+  width: 100%;
+  margin-left: 565px;
+}
+/* body {
+    background-color: #f5f7fa;
+  }
+  
+  .fas.fa-heart:hover {
+    color: #f44336 !important;
+  }
+  
+  .fas.fa-share-alt:hover {
+    color: #0d47a1 !important;
+  } */

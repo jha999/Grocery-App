@@ -1,0 +1,16 @@
+<form [formGroup]="SigninUser" class="add" autocomplete="off" (ngSubmit)="LoginUser()">
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email :</label>
+        <input type="email" name="email" required class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password : </label>
+        <input type="password" name="Password" required class="form-control" formControlName="Password">
+    </div>
+    <!-- <div class="mb-3 form-check boolean optional">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+    </div> -->
+    <a><button type="submit" class="btn btn-success">Submit</button></a>  
+</form>
+

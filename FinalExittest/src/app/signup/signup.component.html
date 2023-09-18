@@ -1,0 +1,24 @@
+<form [formGroup]="addUser" class="add" autocomplete="off" (ngSubmit)="CollectUser()">
+    <div class="mb-3">
+        <label for="FullName" class="form-label">FullName :</label>
+        <input type="text" name="FullName" required class="form-control" formControlName="FullName">
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email :</label>
+        <input type="email" name="email" required class="form-control" formControlName="email">
+    </div>
+    <div class="mb-3">
+        <label for="PhoneNumber" class="form-label">Phone Number :</label>
+        <input type="text" name="PhoneNumber" required class="form-control" formControlName="PhoneNumber">
+        <div *ngIf="!valPhone.untouched||valPhone.dirty">Can't be Empty</div>
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password : </label>
+        <input type="password" name="Password" required class="form-control" formControlName="Password">
+    </div>
+    <div class="mb-3">
+        <label for="Confirm Password" class="form-label">Confirm Password : </label>
+        <input type="password" name="ConfirmPassword" required class="form-control" formControlName="ConfirmPassword">
+    </div>
+    <a><button type="submit" class="btn btn-success">Submit</button></a>  
+</form>

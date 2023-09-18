@@ -1,0 +1,21 @@
+<div class="container">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Order Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of resultant">
+                <td>{{data.product_Name}} </td>
+                <td>{{data.orderQuantity}}</td>
+                <td>{{data.available_Price * data.orderQuantity}}</td>
+                <td><img class="image"src="{{data.image}}" alt="product image">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

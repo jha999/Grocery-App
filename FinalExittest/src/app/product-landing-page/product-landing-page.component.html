@@ -1,0 +1,47 @@
+<div class="container">
+    <input type="text" class="searchbox" #box (keyup)="onSearchKeyPress(box.value)" placeholder="Enter a product name">
+    <button class="refresh" (click)="refreshpage()">Search</button>
+</div>
+<form [formGroup]="dropdownForm">
+    <div class="form-group">
+      <select class="form-control" formControlName="selectedOption" (change)="CateogorySelect($event)">
+        <option value="">Select a Product Category</option>
+        <option *ngFor="let data of collection; let i = index" [value]="data.product_Category" >
+          {{ i + 1 }}. {{ data.product_Category }}
+        </option>
+      </select>
+    </div>
+  </form>
+<p>Selected option: {{ selectedOption.value }}</p>
+
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th *ngIf="email == 'myadmin@test.com'" style="width: 205px;" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of collection">
+                <td>{{ data.product_Name }}</td>
+                <td>{{ data.product_Description }}</td>
+                <td>{{ data.available_Price }}</td>
+                <td><img class="image" src="{{data.image}}" alt="product image" routerLink="viewdetails/{{data.id}}">
+                </td>
+                <td *ngIf="email == 'myadmin@test.com'">
+                    <a><button *ngIf="email == 'myadmin@test.com'" type="submit" class="btn btn-success"
+                            routerLink="updateproduct/{{data.id}}">Edit</button></a>
+                    <a><button *ngIf="email == 'myadmin@test.com'" type="submit" class="btn btn-danger" [disabled]="deleting" (click)="deleteStudent(data.id)">
+                        <span *ngIf="deleting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span *ngIf="!deleting">Delete</span>
+                    </button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,33 @@
+.image { 
+    width: 100px; 
+    height: 100px;  
+}
+.btn{
+  margin-right: 30px;
+  font-weight: bold;
+}
+.searchbox {
+  position: relative;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px;
+}
+
+.refresh {
+  border-radius: 8px;
+}
+form {
+  width: 20%;
+  margin-left: 560px;
+  margin-top: -53px
+}
+
+.form-group,
+.form-control {
+  width: 100%;
+}
+
+p {
+  width: 100%;
+  margin-left: 565px;
+}

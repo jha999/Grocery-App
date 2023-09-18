@@ -1,0 +1,71 @@
+<form  [formGroup]="addProduct"  class="custom-form" autocomplete="off" (ngSubmit)="AddProduct()">
+    <div class="form-group">
+      <label for="Product_Name">Product Name</label>
+      <input type="text" class="form-control" id="Product_Name" placeholder="Enter product name" required formControlName="Product_Name">
+      <div class="invalid-feedback">
+        Only Alphabets and Numbers allowed.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="Product_Description">Product Description</label>
+      <textarea class="form-control" id="Product_Description" placeholder="Enter product description" formControlName="Product_Description"></textarea>
+      <div class="invalid-feedback">
+        Only Alphabets and Numbers allowed.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="Product_Category">Product Category</label>
+      <input type="text" class="form-control" id="Product_Category" placeholder="Enter product category" formControlName="Product_Category">
+      <div class="invalid-feedback">
+        Only Alphabets and Numbers allowed.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="Available_Quantity">Available Quantity</label>
+      <input type="number" class="form-control" id="Available_Quantity" formControlName="Available_Quantity">
+    </div>
+    
+    <div class="form-group">
+      <label for="Available_Discount">Available Discount</label>
+      <div class="input-group">
+        <input type="number" class="form-control" id="Available_Discount" placeholder="Enter available discount" formControlName="Available_Discount">
+        <div class="input-group-append">
+          <span class="input-group-text">%</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="Image">Image</label>
+      <div class="custom-file">
+        <input type="url" class="custom-file-input" id="Image" required placeholder="image url" formControlName="Image">
+        <div class="invalid-feedback">
+          Pick an image.
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="Available_Price">Available Price</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="number" class="form-control" id="Available_Price" placeholder="Enter available price" required formControlName="Available_Price">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="Specification">Specification</label>
+      <input type="text" class="form-control" id="Specification" placeholder="Enter product specification" maxlength="100" pattern="^[a-zA-Z0-9]*$" formControlName="Specification">
+      <div class="invalid-feedback">
+        Only Alphabets and Numbers allowed.
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  
